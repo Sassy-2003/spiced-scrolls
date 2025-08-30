@@ -25,9 +25,9 @@ export default function RecipeDetail() {
     <div className="min-h-screen bg-background">
       {/* Header */}
       <header className="bg-card shadow-sm border-b">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 sm:py-4">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <Link to="/">
-            <Button variant="ghost" className="mb-2 sm:mb-4 text-sm sm:text-base">
+            <Button variant="ghost" className="mb-4">
               <ArrowLeft className="w-4 h-4 mr-2" />
               Back to Recipes
             </Button>
@@ -35,10 +35,10 @@ export default function RecipeDetail() {
         </div>
       </header>
 
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Recipe Header */}
-        <div className="mb-6 sm:mb-8">
-          <div className="aspect-[16/9] rounded-lg sm:rounded-xl overflow-hidden mb-4 sm:mb-6 shadow-[var(--shadow-recipe-card)]">
+        <div className="mb-8">
+          <div className="aspect-[16/9] rounded-xl overflow-hidden mb-6 shadow-[var(--shadow-recipe-card)]">
             <img
               src={recipe.image}
               alt={recipe.title}
@@ -46,60 +46,60 @@ export default function RecipeDetail() {
             />
           </div>
           
-          <div className="flex flex-wrap gap-2 mb-3 sm:mb-4">
+          <div className="flex flex-wrap gap-2 mb-4">
             {recipe.tags.map((tag) => (
               <span
                 key={tag}
-                className="px-2 sm:px-3 py-1 text-xs sm:text-sm font-medium bg-recipe-warm-light text-recipe-warm rounded-full"
+                className="px-3 py-1 text-sm font-medium bg-recipe-warm-light text-recipe-warm rounded-full"
               >
                 {tag}
               </span>
             ))}
           </div>
           
-          <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground mb-3 sm:mb-4 leading-tight">{recipe.title}</h1>
-          <p className="text-base sm:text-lg text-muted-foreground mb-4 sm:mb-6 leading-relaxed">{recipe.description}</p>
+          <h1 className="text-4xl font-bold text-foreground mb-4">{recipe.title}</h1>
+          <p className="text-lg text-muted-foreground mb-6">{recipe.description}</p>
           
-          <div className="grid grid-cols-3 gap-4 sm:flex sm:items-center sm:gap-6 lg:gap-8 text-foreground">
-            <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2 text-center sm:text-left">
-              <Clock className="w-4 h-4 sm:w-5 sm:h-5 text-recipe-warm mx-auto sm:mx-0" />
+          <div className="flex items-center gap-8 text-foreground">
+            <div className="flex items-center gap-2">
+              <Clock className="w-5 h-5 text-recipe-warm" />
               <div>
-                <div className="text-xs sm:text-sm text-muted-foreground">Total Time</div>
-                <div className="font-semibold text-sm sm:text-base">{recipe.prepTime + recipe.cookTime} min</div>
+                <div className="text-sm text-muted-foreground">Total Time</div>
+                <div className="font-semibold">{recipe.prepTime + recipe.cookTime} min</div>
               </div>
             </div>
             
-            <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2 text-center sm:text-left">
-              <Users className="w-4 h-4 sm:w-5 sm:h-5 text-recipe-warm mx-auto sm:mx-0" />
+            <div className="flex items-center gap-2">
+              <Users className="w-5 h-5 text-recipe-warm" />
               <div>
-                <div className="text-xs sm:text-sm text-muted-foreground">Servings</div>
-                <div className="font-semibold text-sm sm:text-base">{recipe.servings}</div>
+                <div className="text-sm text-muted-foreground">Servings</div>
+                <div className="font-semibold">{recipe.servings}</div>
               </div>
             </div>
             
-            <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2 text-center sm:text-left">
-              <ChefHat className="w-4 h-4 sm:w-5 sm:h-5 text-recipe-warm mx-auto sm:mx-0" />
+            <div className="flex items-center gap-2">
+              <ChefHat className="w-5 h-5 text-recipe-warm" />
               <div>
-                <div className="text-xs sm:text-sm text-muted-foreground">Difficulty</div>
-                <div className="font-semibold text-sm sm:text-base">{recipe.difficulty}</div>
+                <div className="text-sm text-muted-foreground">Difficulty</div>
+                <div className="font-semibold">{recipe.difficulty}</div>
               </div>
             </div>
           </div>
         </div>
 
-        <div className="grid lg:grid-cols-3 gap-6 sm:gap-8">
+        <div className="grid lg:grid-cols-3 gap-8">
           {/* Ingredients */}
           <div className="lg:col-span-1">
-            <Card className="h-fit">
-              <CardHeader className="pb-4">
-                <CardTitle className="text-lg sm:text-xl font-bold">Ingredients</CardTitle>
+            <Card>
+              <CardHeader>
+                <CardTitle className="text-xl font-bold">Ingredients</CardTitle>
               </CardHeader>
-              <CardContent className="pt-0">
-                <ul className="space-y-2 sm:space-y-3">
+              <CardContent>
+                <ul className="space-y-3">
                   {recipe.ingredients.map((ingredient, index) => (
                     <li key={index} className="flex items-start gap-3">
                       <span className="w-2 h-2 bg-recipe-warm rounded-full mt-2 flex-shrink-0"></span>
-                      <span className="text-foreground text-sm sm:text-base leading-relaxed">{ingredient}</span>
+                      <span className="text-foreground">{ingredient}</span>
                     </li>
                   ))}
                 </ul>
@@ -110,17 +110,17 @@ export default function RecipeDetail() {
           {/* Instructions */}
           <div className="lg:col-span-2">
             <Card>
-              <CardHeader className="pb-4">
-                <CardTitle className="text-lg sm:text-xl font-bold">Instructions</CardTitle>
+              <CardHeader>
+                <CardTitle className="text-xl font-bold">Instructions</CardTitle>
               </CardHeader>
-              <CardContent className="pt-0">
-                <ol className="space-y-3 sm:space-y-4">
+              <CardContent>
+                <ol className="space-y-4">
                   {recipe.instructions.map((instruction, index) => (
-                    <li key={index} className="flex gap-3 sm:gap-4">
-                      <span className="w-6 h-6 sm:w-8 sm:h-8 bg-recipe-warm text-white rounded-full flex items-center justify-center font-semibold text-xs sm:text-sm flex-shrink-0 mt-0.5">
+                    <li key={index} className="flex gap-4">
+                      <span className="w-8 h-8 bg-recipe-warm text-white rounded-full flex items-center justify-center font-semibold text-sm flex-shrink-0">
                         {index + 1}
                       </span>
-                      <p className="text-foreground leading-relaxed pt-1 text-sm sm:text-base">{instruction}</p>
+                      <p className="text-foreground leading-relaxed pt-1">{instruction}</p>
                     </li>
                   ))}
                 </ol>
