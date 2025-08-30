@@ -8,33 +8,48 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --background: 35 20% 98%;
+    --foreground: 20 14% 16%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 20 14% 16%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 20 14% 16%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 25 95% 53%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 35 25% 95%;
+    --secondary-foreground: 20 14% 16%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 35 20% 96%;
+    --muted-foreground: 25 5% 45%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 142 76% 36%;
+    --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 35 20% 90%;
+    --input: 35 20% 90%;
+    --ring: 25 95% 53%;
+
+    /* Custom recipe theme colors */
+    --recipe-warm: 25 95% 53%;
+    --recipe-warm-light: 35 85% 85%;
+    --recipe-green: 142 76% 36%;
+    --recipe-cream: 35 25% 96%;
+    --recipe-shadow: 25 25% 20%;
+
+    /* Gradients */
+    --gradient-warm: linear-gradient(135deg, hsl(25 95% 53%) 0%, hsl(15 90% 48%) 100%);
+    --gradient-subtle: linear-gradient(180deg, hsl(35 20% 98%) 0%, hsl(35 25% 95%) 100%);
+
+    /* Shadows */
+    --shadow-recipe-card: 0 4px 20px -2px hsl(25 25% 20% / 0.1);
+    --shadow-recipe-hover: 0 8px 30px -4px hsl(25 25% 20% / 0.15);
 
     --radius: 0.5rem;
 
